@@ -1,0 +1,11 @@
+db_connection_string: 'sqlite:////tmp/database.db'
+service_host: '172.10.1.20'
+service_port: 5000
+debug: true
+authorized_api_keys:
+  - "1234" # FOR FAST TESTING PURPOSES. TODO: REMOVE
+  - "This is another frontend API key"
+auth_service:
+  host: '172.10.1.10'
+  port: 4000
+  apikey_secret: 'This should be the backend API key'

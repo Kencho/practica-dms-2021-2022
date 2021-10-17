@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+
+from dms2122common.data import Role
+from dms2122auth.data.config import AuthConfiguration
+from dms2122auth.data.db import Schema
+from dms2122auth.service import UserServices, RoleServices
+
+cfg: AuthConfiguration = AuthConfiguration()
+cfg.load_from_file(cfg.default_config_file())
+db: Schema = Schema(cfg)
+UserServices.create_user('admin', 'admin', db, cfg)
+RoleServices.grant_role('admin', Role.Admin, db)

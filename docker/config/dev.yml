@@ -1,0 +1,47 @@
+version: '3'
+services:
+  auth:
+    build:
+      context: ../images/service
+    image: dms2122-service
+    container_name: dms2122auth
+    volumes:
+      - ../../components/dms2122common:/tmp/deps/src/common:ro
+      - ../../components/dms2122auth:/tmp/src:ro
+      - ./dms2122-auth:/root/.config:ro
+    networks:
+      dms2122:
+        ipv4_address: 172.10.1.10
+
+  backend:
+    build:
+      context: ../images/service
+    image: dms2122-service
+    container_name: dms2122backend
+    volumes:
+      - ../../components/dms2122common:/tmp/deps/src/common:ro
+      - ../../components/dms2122backend:/tmp/src:ro
+      - ./dms2122-backend:/root/.config:ro
+    networks:
+      dms2122:
+        ipv4_address: 172.10.1.20
+
+  frontend:
+    build:
+      context: ../images/service
+    image: dms2122-service
+    container_name: dms2122frontend
+    volumes:
+      - ../../components/dms2122common:/tmp/deps/src/common:ro
+      - ../../components/dms2122frontend:/tmp/src:ro
+      - ./dms2122-frontend:/root/.config:ro
+    networks:
+      dms2122:
+        ipv4_address: 172.10.1.30
+
+networks:
+  dms2122:
+    ipam:
+      driver: default
+      config:
+        - subnet: '172.10.1.0/24'

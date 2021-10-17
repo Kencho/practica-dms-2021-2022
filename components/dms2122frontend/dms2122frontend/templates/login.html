@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% from "macros/flashedmessages.html" import flashedmessages %}
+{% from "macros/buttons.html" import submit_button %}
+{% block title %}Log in{% endblock %}
+{% block pagecontent %}
+    {{ flashedmessages() }}
+    <div id="login-form">
+        <h4 class="aligncenter">Log in</h4>
+        <form action="login" method="post">
+            <input type="text" name="user" placeholder="Username" autofocus />
+            <input type="password" name="pass" placeholder="Password" />
+            <p class="aligncenter">{{ submit_button('bluebg', 'Log in') }}</p>
+        </form>
+    </div>
+{% endblock %}

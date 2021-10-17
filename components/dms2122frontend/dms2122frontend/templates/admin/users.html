@@ -1,0 +1,19 @@
+{% extends "admin.html" %}
+{% from "macros/buttons.html" import button with context %}
+{% block contentsubheading %}User management{% endblock %}
+{% block administrationcontent %}
+<table class="fillwidth highlightrows">
+    <tbody>
+        <tr>
+            <th class="alignleft">Username</th><th></th>
+        </tr>
+        {% for user in users %}
+            <tr class="highlightable">
+                <td class="alignleft"><a href="/admin/users/edit?username={{ user['username'] }}&redirect_to=/admin/users">{{ user['username'] }}</td>
+                <td class="alignright">{{ button('bluebg', '/admin/users/edit?username=' + user['username'] + '&redirect_to=/admin/users', 'Edit') }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p class="alignright">{{ button('bluebg', '/admin/users/new', 'Create new user') }}</p>
+{% endblock %}

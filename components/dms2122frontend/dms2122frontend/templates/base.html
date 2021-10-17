@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <link rel="stylesheet" href="/static/style.css" />
+        <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %} - DMS 21/22</title>
+    </head>
+    <body>
+        <div id="page-content">{% block pagecontent %}{% endblock %}</div>
+        <div id="footer">
+            {% block footer %}{% endblock %}
+            <p>Authors: {{ authors }}</p>
+            <p>Universidad de Burgos - Dise&ntilde;o y Mantenimiento del Software, year 2021-2022.</p>
+        </div>
+    </body>
+</html>

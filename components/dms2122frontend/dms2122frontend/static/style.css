@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#page-top {
+    height: 1em;
+    padding: 0.5em;
+    font-size: 90%;
+    background-color: #333;
+    color: #eee;
+}
+
+#page-top a {
+    color: #aaa;
+}
+
+#page-top a:hover {
+    color: #fff;
+}
+
+#session-info {
+    position: absolute;
+    right: 0.5em;
+    display: inline-block;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#nav #navlinks {
+    margin: 0;
+    padding-inline-start: 0;
+}
+
+#navlinks li {
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+#footer {
+    padding: 1em;
+    background-color: #eee;
+    border-top: 2px solid #ddd;
+    margin-top: 1em;
+    font-size: smaller;
+    color: #777;
+}
+
+#footer p {
+    margin: 0;
+}
+
+#flashedmessages {
+    padding: 0.2em 0;
+    border-radius: 2em  2em 0 0;
+    z-index: 100;
+    position: fixed;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+}
+
+#flashedmessages ul {
+    margin: 0;
+}
+
+#main-content {
+    padding: 1em;
+}
+
+#contentheader {
+    padding: 1em;
+    margin: 0;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+}
+
+#contentheader h1,h2 {
+    margin: 0.2em 0;
+}
+
+#contentheader h2 {
+    color: #9b0015;
+}
+
+a {
+    color: #253aa7;
+}
+
+dd {
+    font-size: smaller;
+    color: #888;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table tr:last-child {
+    border-bottom: 1px solid #eee;
+}
+
+table th {
+    border-bottom: 1px solid #eee;
+}
+
+#login-form {
+    margin: auto;
+    width: fit-content;
+}
+
+#login-form input {
+    display: block;
+    margin: 0.5em 0;
+}
+
+.alignleft {
+    text-align: left;
+}
+
+.aligncenter {
+    text-align: center;
+}
+
+.alignright {
+    text-align: right;
+}
+
+.fillwidth {
+    width: 100%;
+}
+
+.highlightrows tr.highlightable:hover {
+    background-color: #eee;
+}
+
+.button {
+    padding: 0.3em 0.5em;
+    border-radius: 0.3em;
+    border: 0.1em solid transparent;
+    margin: 0.2em;
+    box-shadow: 0 1px inset rgb(255 255 255 / 50%);
+    text-shadow: 0 -1pt black;
+    display: inline-block;
+}
+
+.button:hover,.button:active,.button:focus {
+    border-color: black;
+}
+
+.button:active {
+    box-shadow: 0 0.3em 0.1em inset rgb(0 0 0 / 20%);
+}
+
+.bluebg {
+    background-color: #253aa7;
+    color: #fff;
+}
+
+.bluebg a {
+    color: #fff;
+}
+
+.redbg {
+    background-color: #9b0015;
+    color: #fff;
+}
+
+.redbg a {
+    color: #fff;
+}
+
+.yellowbg {
+    background-color: #ffc930;
+    color: #000;
+}
+
+.yellowbg a {
+    color: #000;
+}
+
+.questiondiv {
+    margin: 10px;
+    padding: 5px;
+    border: #ddd 1px solid;
+    border-left: #ddd 5px solid;
+}
+
+.questiontext {
+    margin-top: 0;
+}
+
+.questionscore {
+    font-size: smaller;
+    color: #777;
+}

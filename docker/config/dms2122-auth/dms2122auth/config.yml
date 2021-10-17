@@ -1,0 +1,11 @@
+db_connection_string: "sqlite:////tmp/database.db"
+service_host: "172.10.1.10"
+service_port: 4000
+debug: true
+salt: "Change this salt!"
+jws_secret: "Change this secret!"
+jws_ttl: 3600
+authorized_api_keys:
+  - "1234" # FOR FAST TESTING PURPOSES. TODO: REMOVE
+  - "This should be the backend API key"
+  - "This should be the frontend API key"

@@ -1,0 +1,23 @@
+{% extends "admin.html" %}
+{% from "macros/buttons.html" import button, submit_button %}
+{% block contentsubheading %}Create new user{% endblock %}
+{% block administrationcontent %}
+    <form action="/admin/users/new" method="post">
+        <input type="hidden" name="redirect_to" value="{{ redirect_to }}" />
+        <dl>
+            <dt>Username</dt>
+            <dd>
+                <input type="text" name="username" placeholder="Username" autofocus />
+            </dd>
+            <dt>Password</dt>
+            <dd>
+                <input type="password" name="password" placeholder="Password" />
+            </dd>
+            <dt>Password confirmation</dt>
+            <dd>
+                <input type="password" name="confirmpassword" placeholder="Confirm password" />
+            </dd>
+        </dl>
+        <p class="alignright">{{ submit_button('bluebg', 'Save changes') }}{{ button('redbg', redirect_to, 'Cancel') }}</p>
+    </form>
+{% endblock %}

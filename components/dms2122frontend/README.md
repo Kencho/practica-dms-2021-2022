@@ -1,0 +1,47 @@
+# DMS 2021-2022 Frontend service
+
+This frontend serves as the human interface for the other services of the appliance.
+
+## Installation
+
+Run `./install.sh` for an automated installation.
+
+To manually install the service:
+
+```bash
+# Install the service itself.
+./setup.py install
+```
+
+## Configuration
+
+Configuration will be loaded from the default user configuration directory, subpath `dms2122frontend/config.yml`. This path is thus usually `${HOME}/.config/dms2122frontend/config.yml` in most Linux distros.
+
+The configuration file is a YAML dictionary with the following configurable parameters:
+
+- `service_host` (mandatory): The service host.
+- `service_port` (mandatory): The service port.
+- `debug`: If set to true, the service will run in debug mode.
+- `app_secret_key`: A secret used to sign the session cookies.
+- `auth_service`: A dictionary with the configuration needed to connect to the authentication service.
+  - `host` and `port`: Host and port used to connect to the service.
+- `backend_service`: A dictionary with the configuration needed to connect to the backend service.
+  - `host` and `port`: Host and port used to connect to the service.
+
+## Running the service
+
+Just run `dms2122frontend` as any other program.
+
+## Services integration
+
+The frontend service is integrated with both the backend and the authentication services. To do so it uses two different API keys (each must be whitelisted in its corresponding service); it is a bad practice to use the same key for different services, as those with access to the whitelist in one can create impostor clients to operate on the other.
+
+## Authentication workflow
+
+Most, if not all operations, require a user session as an authorization mechanism.
+
+Users through this frontend must first log in with their credentials. If they are accepted by the authorization service, a user session token will be generated and returned to the frontend. The frontend will then store the token, encrypted and signed, as a session cookie.
+
+Most of the interactions with the frontend check and refresh this token, so as long as the service is used, the session will be kept open.
+
+If the frontend is kept idle for a long period of time, the session is closed (via a logout), or the token is lost with the cookie (e.g., closing the web browser) the session will be lost and the cycle must start again with a login.

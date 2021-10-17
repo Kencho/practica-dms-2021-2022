@@ -1,0 +1,6 @@
+{% macro button(color_class, href, content, onclick=None) %}
+<a class="button {{ color_class }}" href="{{ href }}" {% if onclick %}onclick="{{ onclick }}"{%endif%}>{{ content }}</a>
+{% endmacro %}
+{% macro submit_button(color_class, content) %}
+{{ button(color_class, '#', content, 'this.closest(\'form\').submit();return false;') }}
+{% endmacro %}

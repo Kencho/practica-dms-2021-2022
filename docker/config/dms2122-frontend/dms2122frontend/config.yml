@@ -1,0 +1,12 @@
+debug: true
+service_host: '172.10.1.30'
+service_port: 8080
+app_secret_key: 'Do NOT share this key with anyone or they will forge session cookies'
+auth_service:
+  host: '172.10.1.10'
+  port: 4000
+  apikey_secret: 'This should be the frontend API key'
+backend_service:
+  host: '172.10.1.20'
+  port: 5000
+  apikey_secret: 'This is another frontend API key'

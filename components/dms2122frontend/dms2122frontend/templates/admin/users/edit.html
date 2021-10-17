@@ -1,0 +1,22 @@
+{% extends "admin.html" %}
+{% from "macros/buttons.html" import button, submit_button %}
+{% block contentsubheading %}Edit user {{ username }}{% endblock %}
+{% block administrationcontent %}
+    <form action="/admin/users/edit" method="post">
+        <input type="hidden" name="username" value="{{ username }}" />
+        <input type="hidden" name="redirect_to" value="{{ redirect_to }}" />
+        <dl>
+            <dt>Username</dt>
+            <dd>
+                {{ username }}
+            </dd>
+            <dt>Roles</dt>
+            <dd>
+                {% for role in all_roles %}
+                    <input type="checkbox" name="roles" value="{{ role }}" {% if role in current_roles %}checked{% endif %}>{{ role }}<br>
+                {% endfor %}
+            </dd>
+        </dl>
+        <p class="alignright">{{ submit_button('bluebg', 'Save changes') }}{{ button('redbg', redirect_to, 'Cancel') }}</p>
+    </form>
+{% endblock %}
