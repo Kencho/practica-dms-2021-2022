@@ -25,7 +25,7 @@ paths:
   '/':
     head:
       summary: Health test for the service
-      operationId: dms2122auth.presentation.rest.servercontrollers.health_test
+      operationId: dms2122auth.presentation.rest.server.health_test
       responses:
         '204':
           description: Success response (will not redirect)
