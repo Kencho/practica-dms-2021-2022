@@ -4,9 +4,13 @@ name: pylint score
 
 on:
   push:
-    branches: [ master ]
+    branches:
+    - main
+    - master
   pull_request:
-    branches: [ master ]
+    branches:
+    - main
+    - master
   workflow_dispatch:
 
 jobs:
